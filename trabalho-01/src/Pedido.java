@@ -11,14 +11,12 @@ public class Pedido {
         produtos = new ArrayList<>();
     }
 
-    public Pedido(List<Produto> produtos, ServicoEntrega servicoDeEntrega) {
+    public Pedido(List<Produto> produtos, ServicoEntrega servicoDeEntrega, int numero, String nomeCliente) {
+        setNomeCliente(nomeCliente);
+        setNumero(numero);
         setProdutos(produtos);
         setServicoDeEntrega(servicoDeEntrega);
         produtos = new ArrayList<>();
-    }
-
-    public int getNumero() {
-        return numero;
     }
 
     public String getNomeCliente() {
@@ -26,10 +24,21 @@ public class Pedido {
     }
 
     public void setNomeCliente(String nomeCliente) {
+        if (nomeCliente == null || nomeCliente.isEmpty()) {
+            throw new IllegalArgumentException("Nome do cliente não pode ser nulo ou vazio");
+        }
         this.nomeCliente = nomeCliente;
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
     public void setNumero(int numero) {
+       if (numero < 0) {
+           throw new IllegalArgumentException("Número não pode ser negativo");
+       }
+
         this.numero = numero;
     }
 

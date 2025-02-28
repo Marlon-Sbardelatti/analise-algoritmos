@@ -8,6 +8,8 @@ public class RetiradaLocalTest {
     public void testCalcularFrete() {
         Pedido pedido = new Pedido();
 
+        pedido.setNomeCliente("Vandernelson");
+        pedido.setNumero(2);
         pedido.inserirProduto(new Produto("Maçã japonesa", 0.50, 0.485));
         pedido.setServicoDeEntrega(new RetiradaLocal());
 

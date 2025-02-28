@@ -8,6 +8,8 @@ public class SedexTest {
     public void testCalcularFrete() {
         Pedido pedido = new Pedido();
 
+        pedido.setNomeCliente("Rubineia");
+        pedido.setNumero(3);
         pedido.inserirProduto(new Produto("Laranja tailandesa", 193436.50, 6));
         pedido.setServicoDeEntrega(new Sedex());
 
