@@ -1,15 +1,17 @@
+package test;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import src.Pedido;
+import src.Produto;
+import src.RetiradaLocal;
 
 public class RetiradaLocalTest {
-
     @Test
     public void testCalcularFrete() {
         Pedido pedido = new Pedido();
 
-        pedido.setNomeCliente("Vandernelson");
-        pedido.setNumero(2);
         pedido.inserirProduto(new Produto("Maçã japonesa", 0.50, 0.485));
         pedido.setServicoDeEntrega(new RetiradaLocal());
 
