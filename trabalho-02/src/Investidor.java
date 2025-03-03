@@ -41,7 +41,7 @@ public class Investidor implements Observer {
 
     @Override
     public void atualizar(String nomeAcao, double valor) {
-        DecimalFormat df = new DecimalFormat("#.##");
-        System.out.println("A ação " + nomeAcao + " teve seu valor atualizado para R$ " + df.format(valor));
+        DecimalFormat df = new DecimalFormat("0.00");
+        System.out.println(getNome() + ", a ação " + nomeAcao + " teve seu valor atualizado para R$ " + df.format(valor));
     }
 }

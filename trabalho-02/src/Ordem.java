@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public abstract class Ordem {
     private String nomeInvestidor;
     private double valorOperacao;
@@ -33,6 +35,7 @@ public abstract class Ordem {
     }
 
     public String toString() {
-        return "Investidor: " + getNomeInvestidor() + "\nValor: " + getValorOperacao() + "\nTipo: " + getTipo();
+        DecimalFormat df = new DecimalFormat("0.00");
+        return "Investidor: " + getNomeInvestidor() + "\nValor: R$ " + df.format(getValorOperacao()) + "\nTipo: " + getTipo();
     }
 }

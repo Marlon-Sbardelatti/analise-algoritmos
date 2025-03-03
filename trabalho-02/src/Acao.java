@@ -108,14 +108,14 @@ public class Acao implements Subject {
         String dados = "";
 
         if (!getOrdens().isEmpty()) {
-            dados += "Ordens\n";
+            dados += "ORDENS\n";
             for (Ordem ordem : getOrdens()) {
                 dados += ordem.toString() + "\n";
             }
         }
 
         if (!getRegistrosPendentes().isEmpty()) {
-            dados += "Pendentes\n";
+            dados += "\nPENDENTES\n";
             for (Command registro : getRegistrosPendentes()) {
                 dados += registro.getOrdem().toString() + "\n";
             }
