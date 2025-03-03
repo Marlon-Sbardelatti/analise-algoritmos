@@ -10,6 +10,7 @@ public class Main {
         Investidor marlon = new Investidor("Marlon");
         marlon.agendarOrdemVenda(acao, 30, 24);
         System.out.println(acao.toString());
+        marlon.inscreverSeEmAcao(acao);
 
         Investidor sara = new Investidor("Sara");
         sara.registrarOrdemVenda(acao, 24);

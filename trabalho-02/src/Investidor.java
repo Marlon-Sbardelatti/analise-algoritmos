@@ -1,4 +1,6 @@
-public class Investidor {
+import java.text.DecimalFormat;
+
+public class Investidor implements Observer {
     private String nome;
 
     public Investidor(String nome) {
@@ -33,4 +35,13 @@ public class Investidor {
         acao.preProgramarRegistro(new RegistrarOrdemCompra(ordem));
    }
 
+   public void inscreverSeEmAcao(Acao acao) {
+        acao.inscrever(this);
+   }
+
+    @Override
+    public void atualizar(String nomeAcao, double valor) {
+        DecimalFormat df = new DecimalFormat("#.##");
+        System.out.println("A ação " + nomeAcao + " teve seu valor atualizado para R$ " + df.format(valor));
+    }
 }

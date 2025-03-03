@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Acao {
+public class Acao implements Subject {
     private String nome;
     private double valor;
-    private ArrayList<Investidor> investidoresInscritos;
+    private ArrayList<Observer> investidoresInscritos;
     private ArrayList<Command> registrosPendentes;
 
     public Acao(String nome, double valor) {
         setNome(nome);
         setValor(valor);
-        investidoresInscritos = new ArrayList<Investidor>();
+        investidoresInscritos = new ArrayList<Observer>();
         ordens = new ArrayList<Ordem>();
         registrosPendentes = new ArrayList<Command>();
     }
@@ -41,11 +41,11 @@ public class Acao {
         this.valor = valor;
     }
 
-    public ArrayList<Investidor> getInvestidoresInscritos() {
+    public ArrayList<Observer> getInvestidoresInscritos() {
         return investidoresInscritos;
     }
 
-    public void setInvestidoresInscritos(ArrayList<Investidor> investidoresInscritos) {
+    public void setInvestidoresInscritos(ArrayList<Observer> investidoresInscritos) {
         this.investidoresInscritos = investidoresInscritos;
     }
 
@@ -100,6 +100,7 @@ public class Acao {
 
     private void atualizarValor(double novoValor) {
         setValor(novoValor);
+        notificar();
         executarRegistrosPendentes();
     }
 
@@ -122,5 +123,22 @@ public class Acao {
         }
 
         return dados;
+    }
+
+    @Override
+    public void inscrever(Observer observer) {
+        getInvestidoresInscritos().add(observer);
+    }
+
+    @Override
+    public void desinscrever(Observer observer) {
+        getInvestidoresInscritos().remove(observer);
+    }
+
+    @Override
+    public void notificar() {
+        for (Observer observer : getInvestidoresInscritos()) {
+            observer.atualizar(getNome(), getValor());
+        }
     }
 }
