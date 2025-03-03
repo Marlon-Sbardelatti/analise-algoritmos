@@ -1,45 +1,19 @@
+package src;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
     private List<Produto> produtos;
     private ServicoEntrega servicoDeEntrega;
-    private int numero;
-    private String nomeCliente;
 
-    public Pedido() {
+    public Pedido(){
         produtos = new ArrayList<>();
     }
 
-    public Pedido(List<Produto> produtos, ServicoEntrega servicoDeEntrega, int numero, String nomeCliente) {
-        setNomeCliente(nomeCliente);
-        setNumero(numero);
+    public Pedido(List<Produto> produtos, ServicoEntrega servicoDeEntrega) {
         setProdutos(produtos);
         setServicoDeEntrega(servicoDeEntrega);
         produtos = new ArrayList<>();
-    }
-
-    public String getNomeCliente() {
-        return nomeCliente;
-    }
-
-    public void setNomeCliente(String nomeCliente) {
-        if (nomeCliente == null || nomeCliente.isEmpty()) {
-            throw new IllegalArgumentException("Nome do cliente não pode ser nulo ou vazio");
-        }
-        this.nomeCliente = nomeCliente;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-       if (numero < 0) {
-           throw new IllegalArgumentException("Número não pode ser negativo");
-       }
-
-        this.numero = numero;
     }
 
     public List<Produto> getProdutos() {
@@ -80,7 +54,7 @@ public class Pedido {
             produtos.remove(produto);
         }
     }
-
+    
     public double calcularPesoTotal() {
         double pesoTotal = 0;
 

@@ -1,3 +1,5 @@
+package src;
+
 public class Produto {
     private String nome;
     private double valor;
@@ -14,9 +16,6 @@ public class Produto {
     }
 
     public void setNome(String nome) {
-        if (nome == null || nome.isEmpty()) {
-            throw new IllegalArgumentException("Nome do cliente não pode ser nulo ou vazio.");
-        }
         this.nome = nome;
     }
 
@@ -25,9 +24,6 @@ public class Produto {
     }
 
     public void setValor(double valor) {
-        if (valor < 0) {
-            throw new IllegalArgumentException("Valor do produto não pode ser negativo.");
-        }
         this.valor = valor;
     }
 
@@ -36,9 +32,6 @@ public class Produto {
     }
 
     public void setPeso(double peso) {
-        if (peso < 0) {
-            throw new IllegalArgumentException("Peso do produto não pode ser negativo");
-        }
         this.peso = peso;
     }
 }

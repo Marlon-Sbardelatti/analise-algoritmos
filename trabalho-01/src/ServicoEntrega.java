@@ -1,3 +1,5 @@
-public interface ServicoEntrega {
-    public double calcularFrete(double pesoTotal);
+package src;
+
+public abstract class ServicoEntrega {
+    public abstract double calcularFrete(double pesoTotal);
 }
