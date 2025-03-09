@@ -26,13 +26,21 @@ public class Investidor implements Observer {
    }
 
    public void agendarOrdemVenda(Acao acao, double valor, double valorAlvo) {
-        OrdemAgendada ordem = new OrdemAgendada(getNome(), valor, valorAlvo);
-        acao.preProgramarRegistro(new RegistrarOrdemVenda(ordem));
+        if (acao.getValor() == valorAlvo)
+            registrarOrdemVenda(acao, valor);
+        else {
+            OrdemAgendada ordem = new OrdemAgendada(getNome(), valor, valorAlvo);
+            acao.preProgramarRegistro(new RegistrarOrdemVenda(ordem));
+        }
    }
 
    public void agendarOrdemCompra(Acao acao, double valor, double valorAlvo) {
-        OrdemAgendada ordem = new OrdemAgendada(getNome(), valor, valorAlvo);
-        acao.preProgramarRegistro(new RegistrarOrdemCompra(ordem));
+       if (acao.getValor() == valorAlvo)
+           registrarOrdemCompra(acao, valor);
+       else {
+           OrdemAgendada ordem = new OrdemAgendada(getNome(), valor, valorAlvo);
+           acao.preProgramarRegistro(new RegistrarOrdemCompra(ordem));
+       }
    }
 
    public void inscreverSeEmAcao(Acao acao) {
