@@ -1,5 +1,5 @@
 public interface Subject {
-    public void inscrever(Observer observer);
-    public void desinscrever(Observer observer);
-    public void notificar();
+    void inscrever(Observer observer);
+    void desinscrever(Observer observer);
+    void notificar();
 }

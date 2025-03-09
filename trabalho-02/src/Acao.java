@@ -1,11 +1,11 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Acao implements Subject {
     private String nome;
     private double valor;
     private ArrayList<Observer> investidoresInscritos;
     private ArrayList<Command> registrosPendentes;
+    private ArrayList<Ordem> ordens;
 
     public Acao(String nome, double valor) {
         setNome(nome);
@@ -23,22 +23,16 @@ public class Acao implements Subject {
         this.registrosPendentes = registrosPendentes;
     }
 
-    private ArrayList<Ordem> ordens;
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getValor() {
-        return valor;
-    }
+    public double getValor() { return valor; }
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public String getNome(){ return nome; }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public ArrayList<Observer> getInvestidoresInscritos() {

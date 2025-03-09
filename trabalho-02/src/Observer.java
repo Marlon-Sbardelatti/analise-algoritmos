@@ -1,3 +1,3 @@
 public interface Observer {
-    public void atualizar(String nomeAcao, double valor);
+    void atualizar(String nomeAcao, double valor);
 }
