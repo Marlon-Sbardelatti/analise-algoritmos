@@ -1,5 +1,7 @@
 package org.example;
 
+import br.furb.analise.algoritmos.ArCondicionadoGellaKaza;
+import br.furb.analise.algoritmos.ArCondicionadoVentoBaumn;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,9 +24,9 @@ public class ControleArTest {
     @Test
     public void testeControleArVentoBaumn() {
         ControleUniversal controle = new ControleUniversal();
-        VentoBaumnCommand ar = new VentoBaumnCommand();
-        controle.setCommand(ar);
-        ar.ligar();
+        ArCondicionadoVentoBaumn arVentoBaumn = new ArCondicionadoVentoBaumn();
+        ArCondicionado ar = new VentoBaumnAdapter(arVentoBaumn);
+        controle.ligar(new ControlarAr(ar));
 
         String esperado = "Ligando seu ar Vento Baumn!" + System.lineSeparator();
 
@@ -34,9 +36,9 @@ public class ControleArTest {
     @Test
     public void testeControleDesligarArVentoBaumn() {
         ControleUniversal controle = new ControleUniversal();
-        VentoBaumnCommand ar = new VentoBaumnCommand();
-        controle.setCommand(ar);
-        ar.desligar();
+        ArCondicionadoVentoBaumn arVentoBaumn = new ArCondicionadoVentoBaumn();
+        ArCondicionado ar = new VentoBaumnAdapter(arVentoBaumn);
+        controle.desligar(new ControlarAr(ar));
 
         String esperado = "Desligando seu ar Vento Baumn!" + System.lineSeparator();
 
@@ -46,12 +48,12 @@ public class ControleArTest {
     @Test
     public void testeDefinirTemperatura() {
         ControleUniversal controle = new ControleUniversal();
-        GellaKazaCommand ar = new GellaKazaCommand();
-        controle.setCommand(ar);
-        ar.ligar();
+        ArCondicionadoGellaKaza arGellaKaza = new ArCondicionadoGellaKaza();
+        ArCondicionado ar = new GellaKazaAdapter(arGellaKaza);
+        controle.ligar(new ControlarAr(ar));
         ar.definirTemperatura(22);
 
-        String esperado = "Ligando seu ar Gella Kaza!" + System.lineSeparator() + "Temperatura: 22"
+        String esperado = "Ligando seu ar Gella Kaza!" + System.lineSeparator() + "Temperatura: 22 °C"
                 + System.lineSeparator();
         assertEquals(esperado, output.toString());
     }
@@ -59,34 +61,39 @@ public class ControleArTest {
     @Test (expected = IllegalArgumentException.class)
     public void testeAumentarTemperaturaSemLigar() {
         ControleUniversal controle = new ControleUniversal();
-        VentoBaumnCommand ar = new VentoBaumnCommand();
-        controle.setCommand(ar);
-        ar.definirTemperatura(22);
+        ArCondicionadoGellaKaza arGellaKaza = new ArCondicionadoGellaKaza();
+        ArCondicionado ar = new GellaKazaAdapter(arGellaKaza);
+        ar.definirTemperatura(35);
+        ar.aumentarTemperatura();
     }
 
     @Test
     public void testeDiminuirTemperatura() {
-        GellaKazaCommand ar = new GellaKazaCommand();
-        ar.ligar();
+        ControleUniversal controle = new ControleUniversal();
+        ArCondicionadoGellaKaza arGellaKaza = new ArCondicionadoGellaKaza();
+        ArCondicionado ar = new GellaKazaAdapter(arGellaKaza);
+        controle.ligar(new ControlarAr(ar));
         ar.definirTemperatura(22);
-        String esperado = "Temperatura: 22" + System.lineSeparator();
+        String esperado = "Temperatura: 22 °C" + System.lineSeparator();
         output.reset();
         ar.diminuirTemperatura();
 
-        esperado = "Temperatura: 21" + System.lineSeparator();
+        esperado = "Temperatura: 21 °C" + System.lineSeparator();
         assertEquals(esperado, output.toString());
     }
 
     @Test
     public void testeAumentarTemperatura() {
-        VentoBaumnCommand ar = new VentoBaumnCommand();
-        ar.ligar();
-        ar.definirTemperatura(35);
-        String esperado = "Temperatura: 35" + System.lineSeparator();
+        ControleUniversal controle = new ControleUniversal();
+        ArCondicionadoGellaKaza arGellaKaza = new ArCondicionadoGellaKaza();
+        ArCondicionado ar = new GellaKazaAdapter(arGellaKaza);
+        controle.ligar(new ControlarAr(ar));
+        ar.definirTemperatura(27);
+        String esperado = "Temperatura: 27 °C" + System.lineSeparator();
         output.reset();
-        ar.diminuirTemperatura();
+        ar.aumentarTemperatura();
 
-        esperado = "Temperatura: 34" + System.lineSeparator();
+        esperado = "Temperatura: 28 °C" + System.lineSeparator();
         assertEquals(esperado, output.toString());
     }
 

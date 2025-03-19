@@ -1,6 +1,7 @@
 package org.example;
 
-import org.junit.After;
+import br.furb.analise.algoritmos.PersianaNatLight;
+import br.furb.analise.algoritmos.PersianaSolarius;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,9 +24,9 @@ public class ControlePersianaTest {
     @Test
     public void testeAbrirPersianaNatLight() {
         ControleUniversal controle = new ControleUniversal();
-        NatLightCommand persiana = new NatLightCommand();
-        controle.setCommand(persiana);
-        persiana.abrir();
+        PersianaNatLight persianaNatLight = new PersianaNatLight();
+        Persiana persiana = new NatLightAdapter(persianaNatLight);
+        controle.ligar(new ControlarPersiana(persiana));
 
         String esperado = "Abrindo a persiana NatLight!" + System.lineSeparator();
 
@@ -35,9 +36,9 @@ public class ControlePersianaTest {
     @Test
     public void testeFecharPersianaNatLight() {
         ControleUniversal controle = new ControleUniversal();
-        NatLightCommand persiana = new NatLightCommand();
-        controle.setCommand(persiana);
-        persiana.fechar();
+        PersianaNatLight persianaNatLight = new PersianaNatLight();
+        Persiana persiana = new NatLightAdapter(persianaNatLight);
+        controle.desligar(new ControlarPersiana(persiana));
 
         String esperado = "Fechando a persiana NatLight!" + System.lineSeparator();
 
@@ -47,9 +48,9 @@ public class ControlePersianaTest {
     @Test
     public void testeAbrirPersianaSolarius() {
         ControleUniversal controle = new ControleUniversal();
-        SolariusCommand persiana = new SolariusCommand();
-        controle.setCommand(persiana);
-        persiana.abrir();
+        PersianaSolarius persianaSolarius = new PersianaSolarius();
+        Persiana persiana = new SolariusAdapter(persianaSolarius);
+        controle.ligar(new ControlarPersiana(persiana));
 
         String esperado = "Abrindo a persiana Solarius!" + System.lineSeparator();
 
@@ -59,9 +60,9 @@ public class ControlePersianaTest {
     @Test
     public void testeFecharPersianaSolarius() {
         ControleUniversal controle = new ControleUniversal();
-        SolariusCommand persiana = new SolariusCommand();
-        controle.setCommand(persiana);
-        persiana.fechar();
+        PersianaSolarius persianaSolarius = new PersianaSolarius();
+        Persiana persiana = new SolariusAdapter(persianaSolarius);
+        controle.desligar(new ControlarPersiana(persiana));
 
         String esperado = "Fechando a persiana Solarius!" + System.lineSeparator();
 

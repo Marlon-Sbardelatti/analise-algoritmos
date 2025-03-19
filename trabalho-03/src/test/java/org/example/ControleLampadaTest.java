@@ -1,6 +1,8 @@
 package org.example;
 
-import org.junit.After;
+import br.furb.analise.algoritmos.ArCondicionadoVentoBaumn;
+import br.furb.analise.algoritmos.LampadaPhellipes;
+import br.furb.analise.algoritmos.LampadaShoyuMi;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,9 +25,9 @@ public class ControleLampadaTest {
     @Test
     public void testeLigarLampadaShoyuMi() {
         ControleUniversal controle = new ControleUniversal();
-        ShoyuMiCommand lampada = new ShoyuMiCommand();
-        controle.setCommand(lampada);
-        lampada.ligar();
+        LampadaShoyuMi lampadaShoyuMi = new LampadaShoyuMi();
+        Lampada lampada = new ShoyuMiAdapter(lampadaShoyuMi);
+        controle.ligar(new ControlarLampada(lampada));
 
         String esperado = "Ligando a lâmpada ShoyuMi!" + System.lineSeparator();
 
@@ -35,9 +37,9 @@ public class ControleLampadaTest {
     @Test
     public void testeDesligarLampadaShoyuMi() {
         ControleUniversal controle = new ControleUniversal();
-        ShoyuMiCommand lampada = new ShoyuMiCommand();
-        controle.setCommand(lampada);
-        lampada.desligar();
+        LampadaShoyuMi lampadaShoyuMi = new LampadaShoyuMi();
+        Lampada lampada = new ShoyuMiAdapter(lampadaShoyuMi);
+        controle.desligar(new ControlarLampada(lampada));
 
         String esperado = "Desligando a lâmpada ShoyuMi!" + System.lineSeparator();
 
@@ -47,11 +49,11 @@ public class ControleLampadaTest {
     @Test
     public void testeControleArVentoBaumn() {
         ControleUniversal controle = new ControleUniversal();
-        ShoyuMiCommand lampada = new ShoyuMiCommand();
-        controle.setCommand(lampada);
-        lampada.ligar();
+        ArCondicionadoVentoBaumn arVentoBaumn = new ArCondicionadoVentoBaumn();
+        ArCondicionado ar = new VentoBaumnAdapter(arVentoBaumn);
+        controle.ligar(new ControlarAr(ar));
 
-        String esperado = "Ligando a lâmpada ShoyuMi!" + System.lineSeparator();
+        String esperado = "Ligando seu ar Vento Baumn!" + System.lineSeparator();
 
         assertEquals(esperado, output.toString());
     }
@@ -59,9 +61,9 @@ public class ControleLampadaTest {
     @Test
     public void testeLigarLampadaPhellipes() {
         ControleUniversal controle = new ControleUniversal();
-        PhellipesCommand lampada = new PhellipesCommand();
-        controle.setCommand(lampada);
-        lampada.ligar();
+        LampadaPhellipes lampadaPhellipes = new LampadaPhellipes();
+        Lampada lampada = new PhellipesAdapter(lampadaPhellipes);
+        controle.ligar(new ControlarLampada(lampada));
 
         String esperado = "Ligando a lâmpada Phellipes!" + System.lineSeparator();
 
@@ -71,9 +73,9 @@ public class ControleLampadaTest {
     @Test
     public void testeDesligarLampadaPhellipes() {
         ControleUniversal controle = new ControleUniversal();
-        PhellipesCommand lampada = new PhellipesCommand();
-        controle.setCommand(lampada);
-        lampada.desligar();
+        LampadaPhellipes lampadaPhellipes = new LampadaPhellipes();
+        Lampada lampada = new PhellipesAdapter(lampadaPhellipes);
+        controle.desligar(new ControlarLampada(lampada));
 
         String esperado = "Desligando a lâmpada Phellipes!" + System.lineSeparator();
 

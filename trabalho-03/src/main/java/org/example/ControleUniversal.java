@@ -1,37 +1,32 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ControleUniversal {
-    private Object command;
+    private List<Command> dispositivos = new ArrayList<Command>();
 
-    public Object getCommand() {
-        return command;
+    public void ligar(Command command) {
+        command.ligar();
     }
 
-    public void setCommand(Object command) {
-        this.command = command;
+    public void desligar(Command command) {
+        command.desligar();
     }
 
-    public void ligar() {
-        if (getCommand() instanceof CommandAr) {
-            ((CommandAr) getCommand()).ligar();
-        } else if (getCommand() instanceof CommandLampada) {
-            ((CommandLampada) getCommand()).ligar();
-        } else if (getCommand() instanceof CommandPersiana) {
-            ((CommandPersiana) getCommand()).abrir();
-        } else {
-            throw new RuntimeException("Dispositivo não disponível");
+    public void registrarDispositivo(Command command) {
+        dispositivos.add(command);
+    }
+
+    public void ativarModoSono() {
+        for (Command dispositivo : dispositivos) {
+            dispositivo.desligar();
         }
     }
 
-    public void desligar() {
-        if (getCommand() instanceof CommandAr) {
-            ((CommandAr) getCommand()).desligar();
-        } else if (getCommand() instanceof CommandLampada) {
-            ((CommandLampada) getCommand()).desligar();
-        } else if (getCommand() instanceof CommandPersiana) {
-            ((CommandPersiana) getCommand()).fechar();
-        } else {
-            throw new RuntimeException("Dispositivo não disponível");
+    public void ativarModoTrabalho() {
+        for (Command dispositivo : dispositivos) {
+            dispositivo.ligar();
         }
     }
 }
