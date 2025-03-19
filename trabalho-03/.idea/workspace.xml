@@ -5,28 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d67d0418-5454-463c-aea3-74ad3a65d9fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CommandAr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CommandLampada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CommandPersiana.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ControleAr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ControleLampada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ControlePersiana.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ControleUniversal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GellaKazaCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/NatLightCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PhellipesCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ShoyuMiCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SolariusCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/VentoBaumnCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ControleArTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ControleLampadaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ControlePersianaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trabalho-03.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NatLightCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NatLightCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ControleArTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ControleArTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ControleLampadaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ControleLampadaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +31,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2uVXUS85MxoRXY5sFyABOGCwtAv" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -62,13 +58,16 @@
     "JUnit.ControleArTest.testeControleArVentoBaumn.executor": "Run",
     "JUnit.ControleArTest.testeControleDesligarArVentoBaumn.executor": "Run",
     "JUnit.ControleLampadaTest.testeControleArVentoBaumn.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sjcri/Documents/FURB/fase_5/ANA/analise-algoritmos/trabalho-03",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,12 +83,15 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ControleLampadaTest.testeControleArVentoBaumn">
-    <configuration name="ControleArTest.testeControleArVentoBaumn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ControleArTest.testeAumentarTemperatura">
+    <configuration name="ControleArTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trabalho-03" />
       <extension name="coverage">
         <pattern>
@@ -99,13 +101,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.ControleArTest" />
-      <option name="METHOD_NAME" value="testeControleArVentoBaumn" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControleArTest.testeControleDesligarArVentoBaumn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControleArTest.testeAumentarTemperatura" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trabalho-03" />
       <extension name="coverage">
         <pattern>
@@ -115,13 +116,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.ControleArTest" />
-      <option name="METHOD_NAME" value="testeControleDesligarArVentoBaumn" />
+      <option name="METHOD_NAME" value="testeAumentarTemperatura" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControleLampadaTest.testeControleArVentoBaumn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControleLampadaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trabalho-03" />
       <extension name="coverage">
         <pattern>
@@ -131,7 +132,53 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.ControleLampadaTest" />
-      <option name="METHOD_NAME" value="testeControleArVentoBaumn" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControlePersianaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trabalho-03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ControlePersianaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControlePersianaTest.testeAbrirPersianaNatLight" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="trabalho-03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ControlePersianaTest" />
+      <option name="METHOD_NAME" value="testeAbrirPersianaNatLight" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControlePersianaTest.testeAbrirPersianaSolarius" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trabalho-03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ControlePersianaTest" />
+      <option name="METHOD_NAME" value="testeAbrirPersianaSolarius" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,9 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ControleLampadaTest.testeControleArVentoBaumn" />
-        <item itemvalue="JUnit.ControleArTest.testeControleDesligarArVentoBaumn" />
-        <item itemvalue="JUnit.ControleArTest.testeControleArVentoBaumn" />
+        <item itemvalue="JUnit.ControleArTest.testeAumentarTemperatura" />
+        <item itemvalue="JUnit.ControleLampadaTest" />
+        <item itemvalue="JUnit.ControlePersianaTest" />
+        <item itemvalue="JUnit.ControlePersianaTest.testeAbrirPersianaSolarius" />
+        <item itemvalue="JUnit.ControleArTest" />
       </list>
     </recent_temporary>
   </component>
@@ -162,25 +211,11 @@
       <option name="presentableId" value="Default" />
       <updated>1742334736310</updated>
       <workItem from="1742334737485" duration="10331000" />
+      <workItem from="1742354436211" duration="2515000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/org/example/ControleArTest.java</url>
-          <line>30</line>
-          <properties class="org.example.ControleArTest" method="testeControleDesligarArVentoBaumn">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

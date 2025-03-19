@@ -12,7 +12,7 @@ public class NatLightCommand implements CommandPersiana{
     @Override
     public void abrir() {
         try {
-            System.out.println("Ligando a persiana NatLight!");
+            System.out.println("Abrindo a persiana NatLight!");
             persiana.subirPalheta();
         } catch (Exception e) {
             throw new RuntimeException(e);
