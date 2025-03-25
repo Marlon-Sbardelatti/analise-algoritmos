@@ -12,9 +12,7 @@ import java.io.PrintStream;
 import static org.junit.Assert.assertEquals;
 
 public class ControleLampadaTest {
-
     private ByteArrayOutputStream output;
-    private PrintStream originalOut;
 
     @Before
     public void setUp() {
@@ -25,8 +23,10 @@ public class ControleLampadaTest {
     @Test
     public void testeLigarLampadaShoyuMi() {
         ControleUniversal controle = new ControleUniversal();
+
         LampadaShoyuMi lampadaShoyuMi = new LampadaShoyuMi();
         Lampada lampada = new ShoyuMiAdapter(lampadaShoyuMi);
+
         controle.ligar(new ControlarLampada(lampada));
 
         String esperado = "Ligando a lâmpada ShoyuMi!" + System.lineSeparator();
@@ -37,8 +37,10 @@ public class ControleLampadaTest {
     @Test
     public void testeDesligarLampadaShoyuMi() {
         ControleUniversal controle = new ControleUniversal();
+
         LampadaShoyuMi lampadaShoyuMi = new LampadaShoyuMi();
         Lampada lampada = new ShoyuMiAdapter(lampadaShoyuMi);
+
         controle.desligar(new ControlarLampada(lampada));
 
         String esperado = "Desligando a lâmpada ShoyuMi!" + System.lineSeparator();
@@ -49,8 +51,10 @@ public class ControleLampadaTest {
     @Test
     public void testeLigarLampadaPhellipes() {
         ControleUniversal controle = new ControleUniversal();
+
         LampadaPhellipes lampadaPhellipes = new LampadaPhellipes();
         Lampada lampada = new PhellipesAdapter(lampadaPhellipes);
+
         controle.ligar(new ControlarLampada(lampada));
 
         String esperado = "Ligando a lâmpada Phellipes!" + System.lineSeparator();
@@ -61,8 +65,10 @@ public class ControleLampadaTest {
     @Test
     public void testeDesligarLampadaPhellipes() {
         ControleUniversal controle = new ControleUniversal();
+
         LampadaPhellipes lampadaPhellipes = new LampadaPhellipes();
         Lampada lampada = new PhellipesAdapter(lampadaPhellipes);
+
         controle.desligar(new ControlarLampada(lampada));
 
         String esperado = "Desligando a lâmpada Phellipes!" + System.lineSeparator();

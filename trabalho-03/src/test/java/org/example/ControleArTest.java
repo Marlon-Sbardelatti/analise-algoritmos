@@ -11,9 +11,7 @@ import java.io.PrintStream;
 import static org.junit.Assert.*;
 
 public class ControleArTest {
-
     private ByteArrayOutputStream output;
-    private PrintStream originalOut;
 
     @Before
     public void setUp() {
@@ -24,8 +22,10 @@ public class ControleArTest {
     @Test
     public void testeControleArVentoBaumn() {
         ControleUniversal controle = new ControleUniversal();
+
         ArCondicionadoVentoBaumn arVentoBaumn = new ArCondicionadoVentoBaumn();
         ArCondicionado ar = new VentoBaumnAdapter(arVentoBaumn);
+
         controle.ligar(new ControlarAr(ar));
 
         String esperado = "Ligando seu ar Vento Baumn!" + System.lineSeparator() + "Temperatura: 25 °C" + System.lineSeparator();
@@ -36,8 +36,10 @@ public class ControleArTest {
     @Test
     public void testeControleDesligarArVentoBaumn() {
         ControleUniversal controle = new ControleUniversal();
+
         ArCondicionadoVentoBaumn arVentoBaumn = new ArCondicionadoVentoBaumn();
         ArCondicionado ar = new VentoBaumnAdapter(arVentoBaumn);
+
         controle.desligar(new ControlarAr(ar));
 
         String esperado = "Desligando seu ar Vento Baumn!" + System.lineSeparator();
@@ -48,8 +50,10 @@ public class ControleArTest {
     @Test
     public void testeDefinirTemperatura() {
         ControleUniversal controle = new ControleUniversal();
+
         ArCondicionadoGellaKaza arGellaKaza = new ArCondicionadoGellaKaza();
         ArCondicionado ar = new GellaKazaAdapter(arGellaKaza);
+
         controle.ligar(new ControlarAr(ar));
         ar.definirTemperatura(22);
 
@@ -60,9 +64,9 @@ public class ControleArTest {
 
     @Test (expected = IllegalArgumentException.class)
     public void testeAumentarTemperaturaSemLigar() {
-        ControleUniversal controle = new ControleUniversal();
         ArCondicionadoGellaKaza arGellaKaza = new ArCondicionadoGellaKaza();
         ArCondicionado ar = new GellaKazaAdapter(arGellaKaza);
+
         ar.definirTemperatura(35);
         ar.aumentarTemperatura();
     }
@@ -70,12 +74,16 @@ public class ControleArTest {
     @Test
     public void testeDiminuirTemperatura() {
         ControleUniversal controle = new ControleUniversal();
+
         ArCondicionadoGellaKaza arGellaKaza = new ArCondicionadoGellaKaza();
         ArCondicionado ar = new GellaKazaAdapter(arGellaKaza);
+
         controle.ligar(new ControlarAr(ar));
         ar.definirTemperatura(22);
+
         String esperado = "Temperatura: 22 °C" + System.lineSeparator();
         output.reset();
+
         ar.diminuirTemperatura();
 
         esperado = "Temperatura: 21 °C" + System.lineSeparator();
@@ -85,12 +93,16 @@ public class ControleArTest {
     @Test
     public void testeAumentarTemperatura() {
         ControleUniversal controle = new ControleUniversal();
+
         ArCondicionadoGellaKaza arGellaKaza = new ArCondicionadoGellaKaza();
         ArCondicionado ar = new GellaKazaAdapter(arGellaKaza);
+
         controle.ligar(new ControlarAr(ar));
         ar.definirTemperatura(27);
+
         String esperado = "Temperatura: 27 °C" + System.lineSeparator();
         output.reset();
+
         ar.aumentarTemperatura();
 
         esperado = "Temperatura: 28 °C" + System.lineSeparator();
