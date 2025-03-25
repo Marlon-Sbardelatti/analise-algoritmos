@@ -28,7 +28,7 @@ public class ControleArTest {
         ArCondicionado ar = new VentoBaumnAdapter(arVentoBaumn);
         controle.ligar(new ControlarAr(ar));
 
-        String esperado = "Ligando seu ar Vento Baumn!" + System.lineSeparator();
+        String esperado = "Ligando seu ar Vento Baumn!" + System.lineSeparator() + "Temperatura: 25 °C" + System.lineSeparator();
 
         assertEquals(esperado, output.toString());
     }
@@ -53,8 +53,8 @@ public class ControleArTest {
         controle.ligar(new ControlarAr(ar));
         ar.definirTemperatura(22);
 
-        String esperado = "Ligando seu ar Gella Kaza!" + System.lineSeparator() + "Temperatura: 22 °C"
-                + System.lineSeparator();
+        String esperado = "Ligando seu ar Gella Kaza!" + System.lineSeparator() + "Temperatura: 25 °C"
+                + System.lineSeparator() + "Temperatura: 22 °C" + System.lineSeparator();
         assertEquals(esperado, output.toString());
     }
 

@@ -8,6 +8,10 @@ public class ControleUniversal {
 
     public void ligar(Command command) {
         command.ligar();
+
+        if (command instanceof ControlarAr) {
+            ((ControlarAr) command).definirTemperatura(25);
+        }
     }
 
     public void desligar(Command command) {
@@ -27,6 +31,10 @@ public class ControleUniversal {
     public void ativarModoTrabalho() {
         for (Command dispositivo : dispositivos) {
             dispositivo.ligar();
+
+            if (dispositivo instanceof ControlarAr) {
+                ((ControlarAr) dispositivo).definirTemperatura(25);
+            }
         }
     }
 }
