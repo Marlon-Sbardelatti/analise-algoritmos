@@ -49,20 +49,6 @@ public class ControleLampadaTest {
     }
 
     @Test
-    public void testeControleArVentoBaumn() {
-        ControleUniversal controle = new ControleUniversal();
-
-        ArCondicionadoVentoBaumn arVentoBaumn = new ArCondicionadoVentoBaumn();
-        ArCondicionado ar = new VentoBaumnAdapter(arVentoBaumn);
-
-        controle.ligar(new ControlarAr(ar));
-
-        String esperado = "Ligando seu ar Vento Baumn!" + System.lineSeparator();
-
-        assertEquals(esperado, output.toString());
-    }
-
-    @Test
     public void testeLigarLampadaPhellipes() {
         ControleUniversal controle = new ControleUniversal();
 
